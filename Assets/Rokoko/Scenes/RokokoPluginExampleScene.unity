@@ -290,6 +290,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &530816232 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5343913092833230358, guid: 45a3ed8bac3c96c4297dcd116a155351,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090609308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &591148160
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591148160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -338,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Property:
-    m_Name: sourceTransform
+    m_Name: New Transform
   Target: {fileID: 222543553}
 --- !u!114 &591148163
 MonoBehaviour:
@@ -413,9 +419,24 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0
+      - m_Value: 1
         m_Name: taileffect
-        m_Overridden: 0
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: RainForceAndAmout
+        m_Overridden: 1
+      - m_Value: 0.01
+        m_Name: Rate
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Open collide boxY
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Open Collide BoxX
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: control particle forceX
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -429,12 +450,27 @@ VisualEffect:
       - m_Value: {x: 1, y: 1, z: 1}
         m_Name: sourceTransform_scale
         m_Overridden: 1
+      - m_Value: {x: -0.000019691362, y: 0, z: 0}
+        m_Name: New Transform_angles
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.87600005, z: 0.00000011664646}
+        m_Name: New Transform_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: New Transform_scale
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:
       m_Array: []
     m_Int:
-      m_Array: []
+      m_Array:
+      - m_Value: 8
+        m_Name: rate
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: Open clllide sphere
+        m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
     m_AnimationCurve:
@@ -445,6 +481,9 @@ VisualEffect:
       m_Array:
       - m_Value: {fileID: 1362466614}
         m_Name: SkinnedMeshRenderer
+        m_Overridden: 1
+      - m_Value: {fileID: 0}
+        m_Name: New SkinnedMeshRenderer
         m_Overridden: 1
     m_Bool:
       m_Array: []
@@ -478,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632906617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.19, y: 2.45, z: -7.58}
+  m_LocalPosition: {x: 0.09, y: 3.15, z: -7.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -693,7 +732,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632906617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6907c22e458592d44b66394ea2241127, type: 3}
   m_Name: 
@@ -729,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635206886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.36, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -764,7 +803,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 635206888}
   m_VisualEffect: {fileID: 635206891}
 --- !u!73398921 &635206890
 VFXRenderer:
@@ -823,10 +863,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.83
+      - m_Value: 0.13
         m_Name: intensity
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: forceRadius
         m_Overridden: 1
     m_Vector2f:
@@ -1113,6 +1153,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198035456}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1300031533 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 472851578564325332, guid: 45a3ed8bac3c96c4297dcd116a155351,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090609308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1313436611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,7 +1226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402540070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1275,7 +1321,7 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0
+      - m_Value: 0.005
         m_Name: attractiveDrag
         m_Overridden: 1
       - m_Value: -10
@@ -1284,7 +1330,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: seperateRange
         m_Overridden: 1
-      - m_Value: 0.577
+      - m_Value: 0.259
         m_Name: waterLevel
         m_Overridden: 1
     m_Vector2f:
@@ -1294,7 +1340,7 @@ VisualEffect:
       - m_Value: {x: -0.000019691362, y: 0, z: 0}
         m_Name: New Transform_angles
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0.9399695, z: 0.039482694}
+      - m_Value: {x: 0, y: 0.87600005, z: 0.00000011664646}
         m_Name: New Transform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
@@ -1445,9 +1491,9 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0
+      - m_Value: 1
         m_Name: taileffect
-        m_Overridden: 0
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1455,7 +1501,7 @@ VisualEffect:
       - m_Value: {x: -0.000019691362, y: 0, z: 0}
         m_Name: sourceTransform_angles
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0.68617773, z: 0.028822368}
+      - m_Value: {x: 0, y: 0.87600005, z: 0.00000011664646}
         m_Name: sourceTransform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
@@ -1469,7 +1515,7 @@ VisualEffect:
       m_Array:
       - m_Value: 8
         m_Name: rate
-        m_Overridden: 0
+        m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
     m_AnimationCurve:
@@ -1493,6 +1539,7 @@ GameObject:
   - component: {fileID: 1761131628}
   - component: {fileID: 1761131631}
   - component: {fileID: 1761131630}
+  - component: {fileID: 1761131632}
   m_Layer: 0
   m_Name: smoke
   m_TagString: Untagged
@@ -1572,7 +1619,7 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.76
+      - m_Value: 1
         m_Name: ParticleEmitPosY
         m_Overridden: 1
       - m_Value: 0.5
@@ -1584,7 +1631,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: particleForceY
         m_Overridden: 1
-      - m_Value: 0.38
+      - m_Value: 0.5
         m_Name: setParticleSize
         m_Overridden: 1
       - m_Value: 0
@@ -1594,14 +1641,32 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: -0.000019691362, y: 0, z: 0}
+      - m_Value: {x: 90, y: 89.9999, z: 0}
         m_Name: New Transform_angles
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0.68617773, z: 0.028822368}
+      - m_Value: {x: -0.5548724, y: 1.2315143, z: -0.014924028}
         m_Name: New Transform_position
         m_Overridden: 1
       - m_Value: {x: 1, y: 1, z: 1}
         m_Name: New Transform_scale
+        m_Overridden: 1
+      - m_Value: {x: 90, y: 89.9999, z: 0}
+        m_Name: New Transform left hand_angles
+        m_Overridden: 1
+      - m_Value: {x: -0.5548724, y: 1.2315143, z: -0.014924028}
+        m_Name: New Transform left hand_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: New Transform left hand_scale
+        m_Overridden: 1
+      - m_Value: {x: 90, y: 270.00012, z: 0}
+        m_Name: New Transform right hand_angles
+        m_Overridden: 1
+      - m_Value: {x: 0.5548724, y: 1.2315139, z: -0.014925415}
+        m_Name: New Transform right hand_position
+        m_Overridden: 1
+      - m_Value: {x: 1, y: 1, z: 1}
+        m_Name: New Transform right hand_scale
         m_Overridden: 1
     m_Vector4f:
       m_Array: []
@@ -1638,8 +1703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Property:
-    m_Name: New Transform
-  Target: {fileID: 222543553}
+    m_Name: New Transform left hand
+  Target: {fileID: 1300031533}
 --- !u!114 &1761131631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,7 +1720,23 @@ MonoBehaviour:
   m_ExecuteInEditor: 1
   m_Bindings:
   - {fileID: 1761131630}
+  - {fileID: 1761131632}
   m_VisualEffect: {fileID: 1761131629}
+--- !u!114 &1761131632
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761131626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Property:
+    m_Name: New Transform right hand
+  Target: {fileID: 530816232}
 --- !u!1 &1911464181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1985,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7214797275273706069, guid: 45a3ed8bac3c96c4297dcd116a155351,
+        type: 3}
+      propertyPath: m_RootBone
+      value: 
+      objectReference: {fileID: 222543553}
     - target: {fileID: 7214797275273706069, guid: 45a3ed8bac3c96c4297dcd116a155351,
         type: 3}
       propertyPath: m_StaticShadowCaster
