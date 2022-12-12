@@ -16,8 +16,8 @@ MonoBehaviour:
   - title: SMR
     position:
       serializedVersion: 2
-      x: 945
-      y: -557
+      x: 767
+      y: -554
       width: 781
       height: 316
     contents:
@@ -33,8 +33,8 @@ MonoBehaviour:
   - title: turbulance
     position:
       serializedVersion: 2
-      x: 1253
-      y: 51
+      x: 2563
+      y: 101
       width: 272
       height: 388
     contents:
@@ -68,9 +68,9 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 945
+    x: 767
     y: -1104
-    width: 3164
+    width: 3342
     height: 2906
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -117,6 +117,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616442}
   - {fileID: 8926484042661616456}
   - {fileID: 8926484042661616484}
+  - {fileID: 8926484042661616488}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -191,20 +192,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: ParticleEmitPosY
-    path: ParticleEmitPosY
-    tooltip: ' (0.76~0.5)'
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: New Transform right hand
     path: 
     tooltip: 
@@ -260,51 +247,37 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: ParticleEmitScaleY
-    path: ParticleEmitScaleY
-    tooltip: ' (0.5~4)'
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.5
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: ParticleLifetime
-    path: ParticleLifetime
-    tooltip: ' (10~20)'
-    sheetType: m_Int
-    realType: Int32
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   - name: ParticleForceX
     path: ParticleForceX
-    tooltip: speed of tail (0.3~1)
+    tooltip: speed of tail
     sheetType: m_Float
     realType: Single
     defaultValue:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.3
-    min: -Infinity
-    max: Infinity
+      m_SerializableObject: 0.2
+    min: -1
+    max: 1
     enumValues: []
     descendantCount: 0
-  - name: setParticleSize
-    path: setParticleSize
-    tooltip: (0.38~1.0)
+  - name: CUE1-0:ParticleForceY
+    path: CUE1-0:ParticleForceY
+    tooltip: 'cue 1-0 : make tail from horizontal to verticle (0.1-1)'
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 0.1
+    min: 0.1
+    max: 1
+    enumValues: []
+    descendantCount: 0
+  - name: CUE1-1:ParticleEmitScaleY
+    path: CUE1-1:ParticleEmitScaleY
+    tooltip: 'cue 1-1 : making start-point of emitor scaleY (0.5-2)'
     sheetType: m_Float
     realType: Single
     defaultValue:
@@ -313,12 +286,12 @@ MonoBehaviour:
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 0.5
     min: 0.5
-    max: 1
+    max: 4
     enumValues: []
     descendantCount: 0
-  - name: particleForceY
-    path: particleForceY
-    tooltip: make tail from horizontal to verticle
+  - name: CUE1-1:ParticleEmitScaleXZ
+    path: CUE1-1:ParticleEmitScaleXZ
+    tooltip: 'cue 1-1 : making start-point of emitor scaleXZ (0-0.2)'
     sheetType: m_Float
     realType: Single
     defaultValue:
@@ -327,21 +300,21 @@ MonoBehaviour:
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 0
     min: 0
-    max: 1
+    max: 0.5
     enumValues: []
     descendantCount: 0
-  - name: ParticleEmitScaleXZ
-    path: ParticleEmitScaleXZ
-    tooltip: 
-    sheetType: m_Float
-    realType: Single
+  - name: CUE2-0:Rate
+    path: CUE2-0:Rate
+    tooltip: 'cue last : change value to 0 to stop smoke.'
+    sheetType: m_Int
+    realType: Int32
     defaultValue:
       m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+      m_SerializableObject: 200
     min: 0
-    max: 1
+    max: 500
     enumValues: []
     descendantCount: 0
   m_ImportDependencies: []
@@ -384,7 +357,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1327, y: -495}
+  m_UIPosition: {x: 1149, y: -492}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1512,7 +1485,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661616489}
 --- !u!114 &8926484042661615721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3126,7 +3100,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1.5
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: Drag
@@ -3484,7 +3458,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615757}
   - {fileID: 8926484042661615779}
   dataType: 0
-  capacity: 1000
+  capacity: 10000
   stripCapacity: 16
   particlePerStripCount: 16
   needsComputeBounds: 0
@@ -3556,7 +3530,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615832}
       inputSlot: {fileID: 8926484042661615411}
-    position: {x: 970, y: -498}
+    position: {x: 792, y: -495}
     expandedSlots: []
     expanded: 1
   - m_Id: 1
@@ -3648,7 +3622,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661615880}
     - outputSlot: {fileID: 8926484042661615839}
       inputSlot: {fileID: 8926484042661616007}
-    position: {x: 1047, y: -405}
+    position: {x: 869, y: -402}
     expandedSlots:
     - {fileID: 8926484042661615834}
     expanded: 1
@@ -5635,7 +5609,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1278, y: 316}
+  m_UIPosition: {x: 2588, y: 366}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -5900,7 +5874,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661615938}
   m_OutputSlots: []
-  m_Disabled: 1
+  m_Disabled: 0
   attribute: color
   Composition: 0
   AlphaComposition: 0
@@ -5933,7 +5907,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.24705882370471955,"g":0.24705882370471955,"b":0.24705882370471955,"a":1.0},"time":0.17941558361053468},{"color":{"r":0.08108460158109665,"g":0.8018366098403931,"b":0.44146057963371279,"a":1.0},"time":0.48529791831970217},{"color":{"r":0.4627451002597809,"g":0.4627451002597809,"b":0.4627451002597809,"a":1.0},"time":0.7558861970901489}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.11372549086809159,"time":0.11470206826925278},{"alpha":0.1568627506494522,"time":0.43823909759521487},{"alpha":0.12156862765550614,"time":0.8088197112083435},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":4.0,"g":4.0,"b":4.0,"a":1.0},"time":0.08235294371843338},{"color":{"r":2.9960784912109377,"g":2.9960784912109377,"b":2.9960784912109377,"a":1.0},"time":0.5000076293945313},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.929411768913269}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.47843137383461,"time":0.2500038146972656},{"alpha":1.0,"time":0.5000076293945313},{"alpha":0.47843137383461,"time":0.7499961853027344},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -5957,7 +5931,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1278, y: 110}
+  m_UIPosition: {x: 2588, y: 160}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6135,8 +6109,8 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots:
-  - {fileID: 8926484042661615773}
   - {fileID: 8926484042661616362}
+  - {fileID: 8926484042661615773}
 --- !u!114 &8926484042661615945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6152,7 +6126,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1279, y: 213}
+  m_UIPosition: {x: 2589, y: 263}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6330,8 +6304,8 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots:
-  - {fileID: 8926484042661615774}
   - {fileID: 8926484042661616363}
+  - {fileID: 8926484042661615774}
 --- !u!114 &8926484042661615951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6347,7 +6321,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1573, y: 627}
+  m_UIPosition: {x: 1548, y: 510}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6525,8 +6499,8 @@ MonoBehaviour:
   m_OutputSlots:
   - {fileID: 8926484042661615976}
   m_ExposedName: ParticleEmitPosY
-  m_Exposed: 1
-  m_Order: 2
+  m_Exposed: 0
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -6539,7 +6513,7 @@ MonoBehaviour:
   m_IsOutput: 0
   m_EnumValues: []
   m_ValueFilter: 0
-  m_Tooltip: ' (0.76~0.5)'
+  m_Tooltip: change start-point of emitor PosY
   m_Nodes:
   - m_Id: 0
     linkedSlots: []
@@ -6601,35 +6575,37 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615978}
-  m_ExposedName: ParticleEmitScaleY
+  m_ExposedName: CUE1-1:ParticleEmitScaleY
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 8
   m_Category: 
   m_Min:
     m_Type:
-      m_SerializableType: 
-    m_SerializableObject: 
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 0.5
   m_Max:
     m_Type:
-      m_SerializableType: 
-    m_SerializableObject: 
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 4
   m_IsOutput: 0
   m_EnumValues: []
-  m_ValueFilter: 0
-  m_Tooltip: ' (0.5~4)'
+  m_ValueFilter: 1
+  m_Tooltip: 'cue 1-1 : making start-point of emitor scaleY (0.5-2)'
   m_Nodes:
   - m_Id: 0
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615978}
       inputSlot: {fileID: 8926484042661615886}
-    position: {x: 1717, y: -263}
+    position: {x: 1643, y: -263}
     expandedSlots: []
     expanded: 0
   - m_Id: 3
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615978}
       inputSlot: {fileID: 8926484042661616318}
-    position: {x: 3470, y: -269}
+    position: {x: 3379, y: -270}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615978
@@ -6690,8 +6666,8 @@ MonoBehaviour:
   m_OutputSlots:
   - {fileID: 8926484042661615980}
   m_ExposedName: ParticleLifetime
-  m_Exposed: 1
-  m_Order: 5
+  m_Exposed: 0
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -6704,7 +6680,7 @@ MonoBehaviour:
   m_IsOutput: 0
   m_EnumValues: []
   m_ValueFilter: 0
-  m_Tooltip: ' (10~20)'
+  m_Tooltip: ' (6~20)'
   m_Nodes:
   - m_Id: 0
     linkedSlots:
@@ -6745,7 +6721,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
+      m_SerializableObject: 8
     m_Space: 2147483647
   m_Property:
     name: o
@@ -6777,15 +6753,15 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615982}
-  m_ExposedName: particleForceY
+  m_ExposedName: CUE1-0:ParticleForceY
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-    m_SerializableObject: 0
+    m_SerializableObject: 0.1
   m_Max:
     m_Type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
@@ -6794,7 +6770,7 @@ MonoBehaviour:
   m_IsOutput: 0
   m_EnumValues: []
   m_ValueFilter: 1
-  m_Tooltip: make tail from horizontal to verticle
+  m_Tooltip: 'cue 1-0 : make tail from horizontal to verticle (0.1-1)'
   m_Nodes:
   - m_Id: 0
     linkedSlots:
@@ -6802,7 +6778,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661615986}
     - outputSlot: {fileID: 8926484042661615982}
       inputSlot: {fileID: 8926484042661615993}
-    position: {x: 1074, y: 847}
+    position: {x: 1058, y: 842}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615982
@@ -6830,7 +6806,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+      m_SerializableObject: 0.1
     m_Space: 2147483647
   m_Property:
     name: o
@@ -6856,7 +6832,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1518, y: 779}
+  m_UIPosition: {x: 1514, y: 779}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7101,7 +7077,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1300, y: 616}
+  m_UIPosition: {x: 1244, y: 396}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7355,26 +7331,28 @@ MonoBehaviour:
   - {fileID: 8926484042661616000}
   m_ExposedName: ParticleForceX
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
-      m_SerializableType: 
-    m_SerializableObject: 
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: -1
   m_Max:
     m_Type:
-      m_SerializableType: 
-    m_SerializableObject: 
+      m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 1
   m_IsOutput: 0
   m_EnumValues: []
-  m_ValueFilter: 0
-  m_Tooltip: speed of tail (0.3~1)
+  m_ValueFilter: 1
+  m_Tooltip: speed of tail
   m_Nodes:
   - m_Id: 0
     linkedSlots:
     - outputSlot: {fileID: 8926484042661616000}
       inputSlot: {fileID: 8926484042661615996}
-    position: {x: 1070, y: 740}
+    position: {x: 1065, y: 621}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616000
@@ -7402,7 +7380,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.3
+      m_SerializableObject: 0.2
     m_Space: 2147483647
   m_Property:
     name: o
@@ -7434,14 +7412,14 @@ MonoBehaviour:
   m_OutputSlots:
   - {fileID: 8926484042661616002}
   m_ExposedName: setParticleSize
-  m_Exposed: 1
-  m_Order: 7
+  m_Exposed: 0
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-    m_SerializableObject: 0.5
+    m_SerializableObject: 0.6
   m_Max:
     m_Type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
@@ -7450,7 +7428,7 @@ MonoBehaviour:
   m_IsOutput: 0
   m_EnumValues: []
   m_ValueFilter: 1
-  m_Tooltip: (0.38~1.0)
+  m_Tooltip: size of particle
   m_Nodes:
   - m_Id: 0
     linkedSlots:
@@ -7491,7 +7469,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.5
+      m_SerializableObject: 0.6
     m_Space: 2147483647
   m_Property:
     name: o
@@ -7517,7 +7495,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1610, y: 84}
+  m_UIPosition: {x: 1628, y: 212}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7857,7 +7835,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1440, y: -200}
+  m_UIPosition: {x: 1396, y: -165}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -8110,7 +8088,7 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661616025}
-  m_ExposedName: ParticleEmitScaleXZ
+  m_ExposedName: CUE1-1:ParticleEmitScaleXZ
   m_Exposed: 1
   m_Order: 9
   m_Category: 
@@ -8123,17 +8101,17 @@ MonoBehaviour:
     m_Type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-    m_SerializableObject: 1
+    m_SerializableObject: 0.5
   m_IsOutput: 0
   m_EnumValues: []
   m_ValueFilter: 1
-  m_Tooltip: 
+  m_Tooltip: 'cue 1-1 : making start-point of emitor scaleXZ (0-0.2)'
   m_Nodes:
   - m_Id: 0
     linkedSlots:
     - outputSlot: {fileID: 8926484042661616025}
       inputSlot: {fileID: 8926484042661616018}
-    position: {x: 1171, y: -95}
+    position: {x: 1135, y: -134}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661616025
@@ -8390,7 +8368,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661616489}
 --- !u!114 &8926484042661616289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11786,7 +11765,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661616397}
   m_OutputSlots: []
-  m_Disabled: 1
+  m_Disabled: 0
   attribute: color
   Composition: 0
   AlphaComposition: 0
@@ -11819,7 +11798,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.24705882370471955,"g":0.24705882370471955,"b":0.24705882370471955,"a":1.0},"time":0.17941558361053468},{"color":{"r":0.08108460158109665,"g":0.8018366098403931,"b":0.44146057963371279,"a":1.0},"time":0.48529791831970217},{"color":{"r":0.4627451002597809,"g":0.4627451002597809,"b":0.4627451002597809,"a":1.0},"time":0.7558861970901489}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.11372549086809159,"time":0.11470206826925278},{"alpha":0.1568627506494522,"time":0.43823909759521487},{"alpha":0.12156862765550614,"time":0.8088197112083435},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":4.0,"g":4.0,"b":4.0,"a":1.0},"time":0.08235294371843338},{"color":{"r":2.9960784912109377,"g":2.9960784912109377,"b":2.9960784912109377,"a":1.0},"time":0.5000076293945313},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.929411768913269}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.47843137383461,"time":0.2500038146972656},{"alpha":1.0,"time":0.5000076293945313},{"alpha":0.47843137383461,"time":0.7499961853027344},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -13281,7 +13260,7 @@ MonoBehaviour:
   - {fileID: 8926484042661616443}
   m_ExposedName: New Transform right hand
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -14108,7 +14087,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 3292, y: 521}
+  m_UIPosition: {x: 3432, y: 505}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -14230,3 +14209,88 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661616388}
+--- !u!114 &8926484042661616488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 8926484042661616489}
+  m_ExposedName: CUE2-0:Rate
+  m_Exposed: 1
+  m_Order: 10
+  m_Category: 
+  m_Min:
+    m_Type:
+      m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 0
+  m_Max:
+    m_Type:
+      m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+    m_SerializableObject: 500
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 1
+  m_Tooltip: 'cue last : change value to 0 to stop smoke.'
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 8926484042661616489}
+      inputSlot: {fileID: 8926484042661615720}
+    - outputSlot: {fileID: 8926484042661616489}
+      inputSlot: {fileID: 8926484042661616288}
+    position: {x: 1569, y: -983}
+    expandedSlots: []
+    expanded: 0
+--- !u!114 &8926484042661616489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d246e354feb93041a837a9ef59437cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661616489}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661616488}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 200
+    m_Space: 2147483647
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 8926484042661615720}
+  - {fileID: 8926484042661616288}
